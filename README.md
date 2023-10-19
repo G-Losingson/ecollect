@@ -1,16 +1,15 @@
 # e_collect_app
 
-A new Flutter project.
+An eCollect App to help my university fundraise safely, quickly and from anywhere current and former students can contribute to the development of their Alma Mater.
 
-## Getting Started
+## Motivation
 
-This project is a starting point for a Flutter application.
+I wanted to contribute in one way or another to the development of my university, and as I did not have enough financial means, I told myself to highlight my knowledge to support the idea that the college students had already started.
 
-A few resources to get you started if this is your first Flutter project:
+### Note
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+It is an unfinished project, but exposed to the university authorities and others of my city, to be able to be sponsored in the possibilities that they can, finally that it is effective and helps the university and even the life of the city to do a lot with tech.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### !?
+
+Don't forget, the App can be re-adapted to all fundraising needs, donations, charity galas, etc. Depending on requests.
