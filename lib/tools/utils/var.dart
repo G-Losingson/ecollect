@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-dynamic controller = 0;
+TextEditingController controller = TextEditingController();
 ValueNotifier<String> theme = ValueNotifier<String>('L\'Alma Mater a besoin de ses nourrissons...');
 ValueNotifier<String> nomcompte = ValueNotifier<String>('UCBukavu');
 ValueNotifier<int> code = ValueNotifier<int>(230404);
-ValueNotifier<int> airtel = ValueNotifier<int>(0991834567);
-ValueNotifier<int> mpesa = ValueNotifier<int>(0813445417);
-ValueNotifier<int> orange = ValueNotifier<int>(0844300329);
+ValueNotifier<int> airtel = ValueNotifier<int>(997534892);
+ValueNotifier<int> mpesa = ValueNotifier<int>(813445417);
+ValueNotifier<int> orange = ValueNotifier<int>(844300329);
 ValueNotifier<int> montant = ValueNotifier<int>(2000);
 ValueNotifier<String> nature = ValueNotifier<String>('CDF');
 
@@ -27,7 +27,7 @@ WebViewController github = WebViewController()
   ..loadRequest(
     Uri.parse('https://github.com/G-Losingson'),
   );
-WebViewController facebook = WebViewController()
+WebViewController google = WebViewController()
   ..loadRequest(
-    Uri.parse('https://web.facebook.com/georsbym.byona.3?locale=fr_FR'),
+    Uri.parse('https://g.dev/georgesbyona'),
   );

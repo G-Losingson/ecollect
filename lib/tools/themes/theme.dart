@@ -24,31 +24,25 @@ class AppTheme {
       size: 30,
     ),
     textTheme: TextTheme(
-      titleLarge: GoogleFonts.poppins(
+      titleLarge: GoogleFonts.poiretOne(
         color: Utils.tdWhite,
         fontSize: 25,
         fontWeight: FontWeight.bold,
-        letterSpacing: 1.5,
+        letterSpacing: 2,
       ),
-      titleMedium: GoogleFonts.poppins(
-        color: Utils.tdWhite,
-        fontSize: 13,
-        fontWeight: FontWeight.normal,
-        letterSpacing: 1,
-        wordSpacing: 1.5,
-        height: 2,
-      ),
-      bodyMedium: GoogleFonts.poppins(
+      titleMedium: GoogleFonts.poiretOne(
         color: Utils.tdWhite,
         fontSize: 13,
         fontWeight: FontWeight.bold,
         letterSpacing: 1.5,
+        wordSpacing: 1.5,
+        height: 1.5,
       ),
-      bodySmall: GoogleFonts.poppins(
+      bodySmall: GoogleFonts.poiretOne(
         color: Utils.tdWhite,
         fontSize: 12,
-        fontWeight: FontWeight.w300,
-        letterSpacing: 1,
+        fontWeight: FontWeight.bold,
+        letterSpacing: 1.5,
       ),
     ),
   );

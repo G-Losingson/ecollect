@@ -1,4 +1,5 @@
 import 'package:e_collect_app/pages/choise/choise.dart';
+import 'package:e_collect_app/tools/widgets/copyright.dart';
 import 'package:e_collect_app/tools/widgets/logotrans.dart';
 import 'package:e_collect_app/tools/widgets/space.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class ThanksPage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           image: DecorationImage(
-            image: Utils.welcomebackground,
+            image: Utils.background,
             fit: BoxFit.fill,
           ),
         ),
@@ -71,7 +72,7 @@ class ThanksPage extends StatelessWidget {
                     height: 120,
                     child: Image(image: Utils.emoji),
                   ),
-                  vertical(30),
+                  vertical(50),
                   GestureDetector(
                     onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ChoisePage())),
                     child: Align(
@@ -80,7 +81,7 @@ class ThanksPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            'Quitter',
+                            'Accueil',
                             style: GoogleFonts.poiretOne(
                               color: Utils.tdWhite,
                               fontSize: 12,
@@ -101,18 +102,7 @@ class ThanksPage extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              'Copyright©Losingson23\nPowered by Flutter',
-              style: GoogleFonts.poiretOne(
-                color: Utils.tdWhite,
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
-                wordSpacing: 1.5,
-                height: 1.5,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            copyright(),
           ],
         ),
       ),

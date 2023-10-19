@@ -34,7 +34,7 @@ Widget logotrans() {
                     color: Utils.tdWhite,
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 1.5,
+                    letterSpacing: 2,
                   ),
                   speed: const Duration(milliseconds: 200),
                 ),

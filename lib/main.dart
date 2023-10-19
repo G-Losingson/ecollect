@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:e_collect_app/tools/themes/theme.dart';
-import 'package:e_collect_app/pages/navbar/navbar.dart';
 import 'package:e_collect_app/pages/choise/choise.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'eCollect',
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.light,
-      home: const BottomNavBar(),
+      home: const ChoisePage(),
     );
   }
 }

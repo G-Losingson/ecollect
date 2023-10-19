@@ -1,24 +1,26 @@
-import 'package:e_collect_app/pages/about/google.dart';
-import 'package:e_collect_app/pages/about/github.dart';
-import 'package:e_collect_app/pages/about/linkedin.dart';
-import 'package:e_collect_app/pages/about/twitter.dart';
-import 'package:e_collect_app/pages/about/whatshapp.dart';
 import 'package:e_collect_app/tools/widgets/copyright.dart';
 import 'package:e_collect_app/tools/widgets/logotrans.dart';
-import 'package:e_collect_app/tools/widgets/space.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:flutter/material.dart';
-import '../../tools/utils/utils.dart';
 
-class AboutPage extends StatelessWidget {
-  const AboutPage({super.key});
+import '../../../tools/utils/utils.dart';
+import '../../../tools/widgets/space.dart';
+import '../../about/google.dart';
+import '../../about/github.dart';
+import '../../about/linkedin.dart';
+import '../../about/twitter.dart';
+import '../../about/whatshapp.dart';
+import '../../choise/choise.dart';
+
+class ThxPage extends StatelessWidget {
+  const ThxPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.transparent,
+      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
           color: Colors.transparent,
@@ -28,22 +30,18 @@ class AboutPage extends StatelessWidget {
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             logotrans(),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 50,
-                vertical: 50,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 50),
               child: Column(
                 children: [
-                  Text(
-                    'A Propos',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
+                  Image(image: Utils.thanks),
                   vertical(30),
                   Text(
-                    'Jeune passionné de la tech, puisant le goût de la technologie (la Programmation) auprès de son grand frère, se rendant à l\'Université Catholique de Bukavu pour commencer sa carrière au sein de la Faculté des Sciences, en sa filière de l\'Informatique.\nAccueilli dans la Google Developer Student Community, celle-ci lui montrant sa voie dans le développement mobile. D\'où je suis un Développeur Mobile avec la fameuse FrameWork Flutter.',
+                    'Merci pour nous avoir utiliser!\nVeuillez attendre une confirmation de d\'ici-là dans la fênêtre "Cheking"!',
                     style: GoogleFonts.poppins(
                       color: Utils.tdWhite,
                       fontSize: 12,
@@ -56,6 +54,20 @@ class AboutPage extends StatelessWidget {
                     softWrap: true,
                   ),
                   vertical(50),
+                  Text(
+                    'Qu\'il vous plaise de nous suivre sur les différents réseaux sociaux!',
+                    style: GoogleFonts.poppins(
+                      color: Utils.tdWhite,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1.5,
+                      wordSpacing: 1,
+                      height: 2,
+                    ),
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                  ),
+                  vertical(30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -102,10 +114,37 @@ class AboutPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  vertical(50),
+                  GestureDetector(
+                    onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ChoisePage())),
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Accueil',
+                            style: GoogleFonts.poiretOne(
+                              color: Utils.tdWhite,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                            ),
+                          ),
+                          const Icon(
+                            Icons.reply,
+                            color: Utils.tdWhiteO,
+                            size: 30,
+                            textDirection: TextDirection.rtl,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-            vertical(50),
+            vertical(100),
             copyright(),
           ],
         ),

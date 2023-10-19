@@ -14,7 +14,7 @@ class ChekingPage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           image: DecorationImage(
-            image: Utils.welcomebackground,
+            image: Utils.background,
             fit: BoxFit.fill,
           ),
         ),

@@ -1,3 +1,5 @@
+import 'package:e_collect_app/tools/widgets/copyright.dart';
+
 import 'alertdonateur/alertdialog1.dart';
 import 'alertorganistateur/alertdialog2.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class ChoisePage extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           image: DecorationImage(
-            image: Utils.welcomebackground,
+            image: Utils.background,
             fit: BoxFit.fill,
           ),
         ),
@@ -139,18 +141,7 @@ class ChoisePage extends StatelessWidget {
                 ],
               ),
             ),
-            Text(
-              'Copyright©Losingson23\nPowered by Flutter',
-              style: GoogleFonts.poiretOne(
-                color: Utils.tdWhite,
-                fontSize: 10,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.5,
-                wordSpacing: 1.5,
-                height: 1.5,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            copyright(),
           ],
         ),
       ),

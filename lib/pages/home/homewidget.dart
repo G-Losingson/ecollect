@@ -1,6 +1,5 @@
+import 'package:e_collect_app/tools/widgets/space.dart';
 import 'package:flutter/material.dart';
-import 'package:e_collect_app/tools/widgets/design.dart';
-
 import '../../tools/utils/utils.dart';
 import 'virement/virairtel/virairtel.dart';
 import 'virement/virmpesa/virmpesa.dart';
@@ -13,37 +12,77 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        GestureDetector(
-          onTap: () {
+        ElevatedButton(
+          onPressed: () {
             showDialog(
               context: context,
               builder: (_) => const VirementAirtel(),
               barrierDismissible: true,
             );
           },
-          child: Design(image: Utils.airtel),
+          style: ButtonStyle(
+            elevation: MaterialStateProperty.all(0),
+            backgroundColor: MaterialStateProperty.all<Color>(Utils.tdWhite),
+            shape: MaterialStateProperty.all(
+                const StadiumBorder(side: BorderSide.none)),
+            minimumSize: MaterialStateProperty.all<Size>(
+                const Size(80, 50)),
+          ),
+          child: CircleAvatar(
+            radius: 20,
+            child: Image(
+              image: Utils.airtel,
+            ),
+          ),
         ),
-        GestureDetector(
-          onTap: () {
+        vertical(30),
+        ElevatedButton(
+          onPressed: () {
             showDialog(
               context: context,
               builder: (_) => const VirementOrange(),
               barrierDismissible: true,
             );
           },
-          child: Design(image: Utils.orange),
+          style: ButtonStyle(
+            elevation: MaterialStateProperty.all(0),
+            backgroundColor: MaterialStateProperty.all<Color>(Utils.tdWhite),
+            shape: MaterialStateProperty.all(
+                const StadiumBorder(side: BorderSide.none)),
+            minimumSize: MaterialStateProperty.all<Size>(
+                const Size(80, 50)),
+          ),
+          child: CircleAvatar(
+            radius: 20,
+            child: Image(
+              image: Utils.orange,
+            ),
+          ),
         ),
-        GestureDetector(
-          onTap: () {
+        vertical(30),
+        ElevatedButton(
+          onPressed: () {
             showDialog(
               context: context,
               builder: (_) => const VirementMpesa(),
               barrierDismissible: true,
             );
           },
-          child: Design(image: Utils.mpesa),
+          style: ButtonStyle(
+            elevation: MaterialStateProperty.all(0),
+            backgroundColor: MaterialStateProperty.all<Color>(Utils.tdWhite),
+            shape: MaterialStateProperty.all(
+                const StadiumBorder(side: BorderSide.none)),
+            minimumSize: MaterialStateProperty.all<Size>(
+                const Size(80, 50)),
+          ),
+          child: CircleAvatar(
+            radius: 20,
+            child: Image(
+              image: Utils.mpesa,
+            ),
+          ),
         ),
       ],
     );

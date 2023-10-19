@@ -18,11 +18,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.transparent,
       body: Container(
         decoration: BoxDecoration(
           color: Colors.transparent,
           image: DecorationImage(
-            image: Utils.welcomebackground,
+            image: Utils.background,
             fit: BoxFit.fill,
           ),
         ),
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
             logotrans(),
             Padding(
               padding: const EdgeInsets.symmetric(
-                vertical: 50,
+                vertical: 40,
                 horizontal: 50,
               ),
               child: Column(

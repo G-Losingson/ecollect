@@ -1,13 +1,12 @@
-import 'package:e_collect_app/tools/widgets/space.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../tools/utils/utils.dart';
 import '../../../../tools/utils/var.dart';
 import '../btn/txtbtn.dart';
-import '../thx.dart';
+import 'montantA.dart';
 
-class ConfirmA extends StatelessWidget {
-  const ConfirmA({super.key});
+class ChoixCmptA extends StatelessWidget {
+  const ChoixCmptA({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,34 +19,19 @@ class ConfirmA extends StatelessWidget {
         horizontal: 35,
         vertical: 100,
       ),
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ValueListenableBuilder(
-            valueListenable: montant,
-            builder: (context, value, _) {
-              return Text(
-                'Vous êtes sur le point de virer ${montant.value} ${nature.value} vers le compte de ${nomcompte.value}.',
-                style: GoogleFonts.poiretOne(
-                  color: Utils.tdBlack,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.5,
-                ),
-              );
-            },
-          ),
-          vertical(20),
-          Text(
-            'Entrer 1 pour confirmer le virement :',
+      title: ValueListenableBuilder(
+        valueListenable: airtel,
+        builder: (context, value, _) {
+          return Text(
+            'Le numéro entré est le ${airtel.value}\nChoisissez un compte\n1. USD\n2. CDF',
             style: GoogleFonts.poiretOne(
               color: Utils.tdBlack,
               fontSize: 15,
               fontWeight: FontWeight.w900,
               letterSpacing: 1.5,
             ),
-          ),
-        ],
+          );
+        },
       ),
       content: Form(
         key: formKey,
@@ -69,13 +53,22 @@ class ConfirmA extends StatelessWidget {
           onTapOutside: (event) =>
               FocusScope.of(context).requestFocus(FocusNode()),
           onFieldSubmitted: (value) {
-            if ((formKey.currentState!.validate()) && (num == 1)) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ThxPage(),
-                ),
-              );
+            if ((formKey.currentState!.validate())) {
+              if (num == 1) {
+                nature.value = 'USD';
+                showDialog(
+                  context: context,
+                  builder: (_) => const MontantA(),
+                  barrierDismissible: true,
+                );
+              } else if (num == 2) {
+                nature.value = 'CDF';
+                showDialog(
+                  context: context,
+                  builder: (_) => const MontantA(),
+                  barrierDismissible: true,
+                );
+              }
             }
             FocusScope.of(context).requestFocus(FocusNode());
           },
@@ -100,10 +93,7 @@ class ConfirmA extends StatelessWidget {
           ),
           validator: (valeur) {
             if (valeur == null || valeur.isEmpty) {
-              return 'Merci de confirmer le virement!';
-            } else if (num != 1) {
-              controller.clear();
-              return 'Merci de taper 1 pour confirmer le virement';
+              return 'Veuillez choisir une option';
             }
             return null;
           },
@@ -112,18 +102,27 @@ class ConfirmA extends StatelessWidget {
       actions: [
         const TxtBtn(),
         ValueListenableBuilder(
-          valueListenable: montant,
+          valueListenable: nature,
           builder: (context, value, _) {
             return ElevatedButton(
               onPressed: () {
-                if ((formKey.currentState!.validate()) && (num == 1)) {
-                  controller.clear();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ThxPage(),
-                    ),
-                  );
+                controller.clear();
+                if ((formKey.currentState!.validate())) {
+                  if (num == 1) {
+                    nature.value = 'USD';
+                    showDialog(
+                      context: context,
+                      builder: (_) => const MontantA(),
+                      barrierDismissible: true,
+                    );
+                  } else if (num == 2) {
+                    nature.value = 'CDF';
+                    showDialog(
+                      context: context,
+                      builder: (_) => const MontantA(),
+                      barrierDismissible: true,
+                    );
+                  }
                 }
                 FocusScope.of(context).requestFocus(FocusNode());
               },
@@ -142,7 +141,7 @@ class ConfirmA extends StatelessWidget {
                   ),
                 ),
               ),
-              child: const Text('Virer'),
+              child: const Text('Suivant'),
             );
           },
         ),

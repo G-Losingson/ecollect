@@ -8,9 +8,10 @@ class Utils {
   static dynamic mpesa = const AssetImage('images/mpesa.png');
   static dynamic orange = const AssetImage('images/orange.png');
   static dynamic welcome = const AssetImage('images/welcome.png');
-  static dynamic welcomebackground = const AssetImage('images/welcomebackground.png');
+  static dynamic background = const AssetImage('images/background.png');
   static dynamic emoji = const AssetImage('images/emoji.png');
   static dynamic oups = const AssetImage('images/oups.png');
+  static dynamic thanks = const AssetImage('images/thanks.png');
 
   static const Color tdBlack = Color(0xDD000000);
   static const Color tdWhite = Color(0xFFFFFFFF);

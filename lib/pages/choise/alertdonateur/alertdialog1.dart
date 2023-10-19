@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../tools/utils/utils.dart';
 import '../../../tools/utils/var.dart';
 import '../../welcome/welcome.dart';
 import '../thanks.dart';
 
-class AlertDialogPage1 extends StatelessWidget {
+class AlertDialogPage1 extends StatefulWidget {
   const AlertDialogPage1({super.key});
+
+  @override
+  State<AlertDialogPage1> createState() => _AlertDialogPage1State();
+}
+
+class _AlertDialogPage1State extends State<AlertDialogPage1> {
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
+    late dynamic num;
     return ValueListenableBuilder(
       valueListenable: code,
       builder: (context, value, _) {
@@ -35,15 +48,39 @@ class AlertDialogPage1 extends StatelessWidget {
                 fontWeight: FontWeight.w900,
                 letterSpacing: 2,
               ),
-              onChanged: (valeur) => controller = valeur,
-              onEditingComplete: () =>
-                  FocusScope.of(context).requestFocus(FocusNode()),
-              onFieldSubmitted: (value) =>
-                  FocusScope.of(context).requestFocus(FocusNode()),
+              controller: controller,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.digitsOnly
+              ],
+              onTap: () {
+                controller.clear();
+              },
+              onChanged: (text) {
+                num = int.parse(text.trim());
+              },
+              onFieldSubmitted: (value) {
+                if ((formKey.currentState!.validate()) && (num == code.value)) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WelcomePage()));
+                }
+                controller.clear();
+                FocusScope.of(context).requestFocus(FocusNode());
+              },
               onTapOutside: (event) =>
                   FocusScope.of(context).requestFocus(FocusNode()),
               decoration: const InputDecoration(
                 border: UnderlineInputBorder(
+                  borderRadius: BorderRadius.zero,
+                  borderSide: BorderSide(
+                    color: Utils.tdBlack,
+                    width: 1,
+                    style: BorderStyle.solid,
+                  ),
+                ),
+                enabled: true,
+                enabledBorder: UnderlineInputBorder(
                   borderRadius: BorderRadius.zero,
                   borderSide: BorderSide(
                     color: Utils.tdBlack,
@@ -57,10 +94,10 @@ class AlertDialogPage1 extends StatelessWidget {
               validator: (valeur) {
                 if (valeur == null || valeur.isEmpty) {
                   return 'Veuillez entrer le code';
+                } else if (num != code.value) {
+                  controller.clear();
+                  return 'Le code $num n\'est pas reconnu.\nVeuillez réessayer ou contacter votre\npartenaire.';
                 }
-                //else if (controller != code.value) {
-                //   return 'Le code $controller n\'est pas reconnu.\nVeuillez réessayer ou contacter votre\npartenaire.';
-                // }
                 return null;
               },
             ),
@@ -98,8 +135,8 @@ class AlertDialogPage1 extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                if ((formKey.currentState!.validate()) //&& (controller == code.value)
-                ) {
+                if ((formKey.currentState!.validate()) && (num == code.value)) {
+                  controller.clear();
                   Navigator.push(
                       context,
                       MaterialPageRoute(
