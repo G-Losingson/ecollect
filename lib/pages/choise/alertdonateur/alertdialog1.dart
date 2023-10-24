@@ -14,11 +14,6 @@ class AlertDialogPage1 extends StatefulWidget {
 }
 
 class _AlertDialogPage1State extends State<AlertDialogPage1> {
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +50,11 @@ class _AlertDialogPage1State extends State<AlertDialogPage1> {
               onTap: () {
                 controller.clear();
               },
-              onChanged: (text) {
-                num = int.parse(text.trim());
+              onChanged: (value) {
+                num = int.parse(value.trim());
               },
               onFieldSubmitted: (value) {
+                num = int.parse(value.trim());
                 if ((formKey.currentState!.validate()) && (num == code.value)) {
                   Navigator.push(
                       context,

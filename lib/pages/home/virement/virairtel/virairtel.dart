@@ -6,19 +6,8 @@ import '../../../../tools/utils/var.dart';
 import '../../../../tools/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class VirementAirtel extends StatefulWidget {
+class VirementAirtel extends StatelessWidget {
   const VirementAirtel({super.key});
-
-  @override
-  State<VirementAirtel> createState() => _VirementAirtelState();
-}
-
-class _VirementAirtelState extends State<VirementAirtel> {
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +64,7 @@ class _VirementAirtelState extends State<VirementAirtel> {
               FocusScope.of(context).requestFocus(FocusNode()),
           onFieldSubmitted: (value) {
             if ((formKey.currentState!.validate())) {
+              controller.clear();
               airtel.value = num;
               showDialog(
                 context: context,

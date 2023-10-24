@@ -20,6 +20,4 @@ class Utils {
   static const Color tdYellow = Color(0xFFFFCB2F);
   static const Color tdYellowO = Color(0x6AFFCB2F);
   static const Color tdRed = Color(0xFFDA554B);
-  static const Color tdBlueO = Color(0x312196F3);
-  static const Color tdBlueB = Color(0xFF162A49);
 }

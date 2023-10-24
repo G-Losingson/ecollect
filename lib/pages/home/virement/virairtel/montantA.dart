@@ -54,6 +54,7 @@ class MontantA extends StatelessWidget {
               FocusScope.of(context).requestFocus(FocusNode()),
           onFieldSubmitted: (value) {
             if ((formKey.currentState!.validate())) {
+              controller.clear();
               montant.value = num;
               showDialog(
                 context: context,
@@ -84,7 +85,7 @@ class MontantA extends StatelessWidget {
           ),
           validator: (valeur) {
             if (valeur == null || valeur.isEmpty) {
-              return 'Veuillez choisir une option';
+              return 'Merci d\'entrer un montant de virement';
             }
             return null;
           },

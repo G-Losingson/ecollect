@@ -12,10 +12,6 @@ class TxtBtn extends StatefulWidget {
 
 class _TxtBtnState extends State<TxtBtn> {
   @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {

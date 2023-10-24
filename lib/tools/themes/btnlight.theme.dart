@@ -34,10 +34,10 @@ class BtnLightTheme {
   static FloatingActionButtonThemeData floatingbtnlight =
       const FloatingActionButtonThemeData(
     elevation: 0,
-    backgroundColor: Utils.tdBlueO,
-    foregroundColor: Utils.tdBlueB,
-    hoverColor: Utils.tdBlueO,
+    backgroundColor: Utils.tdYellowO,
+    foregroundColor: Utils.tdYellow,
+    hoverColor: Utils.tdYellowO,
     iconSize: 20,
-    focusColor: Utils.tdBlueB,
+    focusColor: Utils.tdYellow,
   );
 }

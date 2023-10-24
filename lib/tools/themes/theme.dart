@@ -7,7 +7,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     colorScheme: const ColorScheme.light(
       primary: Utils.tdBlack,
-      secondary: Utils.tdBlueB,
+      secondary: Utils.tdYellow,
       onSecondary: Utils.tdWhite,
       tertiary: Utils.tdBlack,
       error: Utils.tdRed,

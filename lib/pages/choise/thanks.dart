@@ -29,7 +29,7 @@ class ThanksPage extends StatelessWidget {
             Container(
               margin: const EdgeInsets.symmetric(
                 horizontal: 50,
-                vertical: 150,
+                vertical: 120,
               ),
               child: Column(
                 children: [

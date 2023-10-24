@@ -1,7 +1,7 @@
 import 'package:e_collect_app/tools/widgets/copyright.dart';
 
 import 'alertdonateur/alertdialog1.dart';
-import 'alertorganistateur/alertdialog2.dart';
+import 'form/form.dart';
 import 'package:flutter/material.dart';
 import '../../tools/utils/utils.dart';
 import '../../tools/widgets/logotrans.dart';
@@ -110,13 +110,12 @@ class ChoisePage extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (_) => const AlertDialogPage2(),
-                        barrierDismissible: true,
-                      );
-                    },
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FormPage(),
+                      ),
+                    ),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
                       backgroundColor:

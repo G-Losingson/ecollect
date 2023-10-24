@@ -54,6 +54,7 @@ class ChoixCmptA extends StatelessWidget {
               FocusScope.of(context).requestFocus(FocusNode()),
           onFieldSubmitted: (value) {
             if ((formKey.currentState!.validate())) {
+              controller.clear();
               if (num == 1) {
                 nature.value = 'USD';
                 showDialog(
@@ -94,6 +95,8 @@ class ChoixCmptA extends StatelessWidget {
           validator: (valeur) {
             if (valeur == null || valeur.isEmpty) {
               return 'Veuillez choisir une option';
+            } else if (num != 1 && num != 2) {
+              return 'Choisissez entre 1 et 2 pour un compte donné';
             }
             return null;
           },

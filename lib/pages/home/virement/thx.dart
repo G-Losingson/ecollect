@@ -1,3 +1,4 @@
+import 'package:e_collect_app/pages/checking/cheking.dart';
 import 'package:e_collect_app/tools/widgets/copyright.dart';
 import 'package:e_collect_app/tools/widgets/logotrans.dart';
 import 'package:flutter/material.dart';
@@ -115,31 +116,68 @@ class ThxPage extends StatelessWidget {
                     ],
                   ),
                   vertical(50),
-                  GestureDetector(
-                    onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ChoisePage())),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            'Accueil',
-                            style: GoogleFonts.poiretOne(
-                              color: Utils.tdWhite,
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1.5,
-                            ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: () => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChekingPage())),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              const Icon(
+                                Icons.reply,
+                                color: Utils.tdWhiteO,
+                                size: 30,
+                                textDirection: TextDirection.ltr,
+                              ),
+                              Text(
+                                'Cheking',
+                                style: GoogleFonts.poiretOne(
+                                  color: Utils.tdWhite,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
                           ),
-                          const Icon(
-                            Icons.reply,
-                            color: Utils.tdWhiteO,
-                            size: 30,
-                            textDirection: TextDirection.rtl,
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
+                      GestureDetector(
+                        onTap: () => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChoisePage())),
+                        child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                'Accueil',
+                                style: GoogleFonts.poiretOne(
+                                  color: Utils.tdWhite,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                              const Icon(
+                                Icons.reply,
+                                color: Utils.tdWhiteO,
+                                size: 30,
+                                textDirection: TextDirection.rtl,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
